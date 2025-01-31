@@ -23,8 +23,9 @@ const GptSearchBar = () => {
         const gptQuery="Act as a Movie Recommendtaion system and suggest some movies for the query" + searchText.current.value+". only give me names of 5 movies, separated by comma like the example result given ahead without numbering a line . Example result : koi mil gya, sholay, don, gadar, raaz";
         const gptResult= await openai.chat.completions.create({
             messages: [{ role: 'user', content: gptQuery }],
-            model: 'gpt-3.5-turbo',
-        });
+            model: 'gpt-4o-mini',
+            store: true,
+        }); 
         if(!gptResult.choices){
             // error handling
         }
