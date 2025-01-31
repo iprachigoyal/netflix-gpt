@@ -28,7 +28,7 @@ const GptSearchBar = () => {
         if(!gptResult.choices){
             // error handling
         }
-        console.log(gptResult.choices?.[0]?.message.content);
+        
         const gptMovie=gptResult.choices?.[0]?.message.content.split(",");
         const promiseArray= gptMovie.map(movie=>searchMovieTMDB(movie)) ;
         // array of promises [p1, p2, p3, p4, p5]
